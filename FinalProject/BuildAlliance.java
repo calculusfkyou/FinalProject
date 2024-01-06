@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -77,8 +78,7 @@ public class BuildAlliance extends JFrame {
 	 * Create the frame.
 	 */
 	public BuildAlliance() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(BuildAlliance.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("建立聯盟");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -294,8 +294,7 @@ public class BuildAlliance extends JFrame {
 		playerTextPane.setText("ID：" + latestAccount);
 		IDPanel.add(playerTextPane);
 
-		ImageIcon avatar = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images/avatar.jpg");
-		JLabel avatar_lbl = new JLabel(avatar);
+		JLabel avatar_lbl = new JLabel(new ImageIcon(BuildAlliance.class.getResource("/Images/avatar.jpg")));
 		avatar_lbl.setBounds(3, 2, 65, 65);
 		IDPanel.add(avatar_lbl);
 
@@ -374,12 +373,9 @@ public class BuildAlliance extends JFrame {
 	private void initializeAnnouncements() {
 		// 初始化布告欄消息和相應的圖片
 		announcements = new ArrayList<>();
-		announcements.add(new Announcement("2024世界賽即將開打！歡迎各位購票入場",
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\news4.jpg"));
-		announcements.add(new Announcement("的賽斷開連接！微博和奧迪沒有贊助",
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\news5.jpg"));
-		announcements.add(new Announcement("嘎痛：覺得牌位積分不重要 不講是誰 \"西X\"..不練角 永遠站在老山那邊 每次出去都被雷茲虐",
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\news7.jpg"));
+		announcements.add(new Announcement("2024世界賽即將開打！歡迎各位購票入場",BuildAlliance.class.getResource("/Images/news4.jpg")));
+		announcements.add(new Announcement("的賽斷開連接！微博和奧迪沒有贊助",BuildAlliance.class.getResource("/Images/news5.jpg")));
+		announcements.add(new Announcement("嘎痛：覺得牌位積分不重要 不講是誰 \"西X\"..不練角 永遠站在老山那邊 每次出去都被雷茲虐",BuildAlliance.class.getResource("/Images/news7.jpg")));
 		// 可以加入更多布告欄消息和相應的圖片
 
 		// 隨機排序，以便輪播效果
@@ -420,18 +416,18 @@ public class BuildAlliance extends JFrame {
 	// 內部類別，表示一條布告欄消息和相應的圖片
 	private static class Announcement {
 		private String message;
-		private String imagePath;
+		private URL imagePath;
 
-		public Announcement(String message, String imagePath) {
+		public Announcement(String message, URL url) {
 			this.message = message;
-			this.imagePath = imagePath;
+			this.imagePath = url;
 		}
 
 		public String getMessage() {
 			return message;
 		}
 
-		public String getImagePath() {
+		public URL getImagePath() {
 			return imagePath;
 		}
 	}
