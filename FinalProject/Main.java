@@ -56,8 +56,7 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("大巨巢(LBN)競技系統");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,13 +70,13 @@ public class Main extends JFrame {
 
 		// 新增 JPanel 作為身分選擇的容器
 		identityPanel = new JPanel();
+//        identityPanel.setOpaque(false); // 讓背景透明
 		identityPanel.setBorder(new LineBorder(Color.BLACK, 2)); // 設定黑色邊框
 		identityPanel.setBounds(621, 308, 555, 236);
 		contentPane.add(identityPanel);
 		identityPanel.setLayout(null);
 
-		ImageIcon logo = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png");
-		JLabel label = new JLabel(logo);
+		JLabel label = new JLabel(new ImageIcon(Main.class.getResource("/Images/logo.png")));
 		label.setBounds(15, 10, 158, 157);
 		contentPane.add(label);
 
@@ -125,8 +124,7 @@ public class Main extends JFrame {
 		license_lbl_1.setBounds(15, 770, 500, 35);
 		contentPane.add(license_lbl_1);
 
-		ImageIcon MainBk = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\MainBK.png");
-		JLabel label_1 = new JLabel(MainBk);
+		JLabel label_1 = new JLabel(new ImageIcon(Main.class.getResource("/Images/MainBK.png")));
 		label_1.setBounds(0, 0, 1535, 865);
 		contentPane.add(label_1);
 		
