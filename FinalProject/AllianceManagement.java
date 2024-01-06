@@ -82,8 +82,7 @@ public class AllianceManagement extends JFrame {
 	 * Create the frame.
 	 */
 	public AllianceManagement() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse" + "" + "-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AllianceManagement.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("聯盟所有者");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -347,9 +346,7 @@ public class AllianceManagement extends JFrame {
 		updateDescriptionBtn.setBounds(490, 300, 100, 40);
 		ALLPanel.add(updateDescriptionBtn);
 
-		ImageIcon cooperation = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\cooperation.png");
-		JLabel cooperation_lbl = new JLabel(cooperation);
+		JLabel cooperation_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/cooperation.png")));
 		cooperation_lbl.setBounds(30, 425, 150, 150);
 		cooperation_lbl.addMouseListener(new MouseAdapter() {
 
@@ -372,8 +369,7 @@ public class AllianceManagement extends JFrame {
 		cooperation_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		ALLPanel.add(cooperation_lbl);
 
-		ImageIcon task = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\task.png");
-		JLabel task_lbl = new JLabel(task);
+		JLabel task_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/task.png")));
 		task_lbl.setBounds(225, 425, 150, 150);
 		task_lbl.addMouseListener(new MouseAdapter() {
 
@@ -396,8 +392,7 @@ public class AllianceManagement extends JFrame {
 		task_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		ALLPanel.add(task_lbl);
 
-		ImageIcon dashboard = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\dashboard.png");
-		JLabel dashboard_lbl = new JLabel(dashboard);
+		JLabel dashboard_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/dashboard.png")));
 		dashboard_lbl.setBounds(420, 425, 150, 150);
 		dashboard_lbl.addMouseListener(new MouseAdapter() {
 
@@ -438,9 +433,7 @@ public class AllianceManagement extends JFrame {
 		separator3.setForeground(separator3Color);
 		contentPane.add(separator3);
 
-		ImageIcon conversation = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\conversation.png");
-		JLabel conversation_lbl = new JLabel(conversation);
+		JLabel conversation_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/conversation.png")));
 		conversation_lbl.setBounds(0, -2, 70, 70);
 		conversation_lbl.addMouseListener(new MouseAdapter() {
 
@@ -463,8 +456,7 @@ public class AllianceManagement extends JFrame {
 		conversation_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		chatPanel.add(conversation_lbl);
 
-		ImageIcon quest = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\quest.png");
-		JLabel quest_lbl = new JLabel(quest);
+		JLabel quest_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/quest.png")));
 		quest_lbl.setBounds(71, -2, 70, 70);
 		quest_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -486,8 +478,7 @@ public class AllianceManagement extends JFrame {
 		quest_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		chatPanel.add(quest_lbl);
 
-		ImageIcon bug = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\anti-bug.png");
-		JLabel bug_lbl = new JLabel(bug);
+		JLabel bug_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/anti-bug.png")));
 		bug_lbl.setBounds(142, -2, 70, 70);
 		bug_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -509,9 +500,7 @@ public class AllianceManagement extends JFrame {
 		bug_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		chatPanel.add(bug_lbl);
 
-		ImageIcon customer = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\customer-service.png");
-		JLabel customer_lbl = new JLabel(customer);
+		JLabel customer_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/customer-service.png")));
 		customer_lbl.setBounds(213, -2, 70, 70);
 		customer_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -581,8 +570,7 @@ public class AllianceManagement extends JFrame {
 		separator2.setBounds(68, 0, 1, 69);
 		IDPanel.add(separator2);
 
-		ImageIcon avatar = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\avatar.jpg");
-		JLabel avatar_lbl = new JLabel(avatar);
+		JLabel avatar_lbl = new JLabel(new ImageIcon(AllianceManagement.class.getResource("/Images/avatar.jpg")));
 		avatar_lbl.setBounds(3, 2, 65, 65);
 		IDPanel.add(avatar_lbl);
 
@@ -654,7 +642,7 @@ public class AllianceManagement extends JFrame {
 		contentPane.add(gameInfo_btn);
 
 		ImageIcon BkIcon = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\buildAllianceBk.jpg"); // 背景圖片
+				AllianceManagement.class.getResource("/Images/buildAllianceBk.jpg")); // 背景圖片
 		Image originalImage = BkIcon.getImage();
 		float transparency = 0.5f; // 設定透明度，0.0 是完全透明，1.0 是完全不透明
 		Image transparentImage = makeTransparent(originalImage, transparency); // 創建具有指定透明度的新圖像
