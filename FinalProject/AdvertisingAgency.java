@@ -53,8 +53,7 @@ public class AdvertisingAgency extends JFrame {
 	 * Create the frame.
 	 */
 	public AdvertisingAgency() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AdvertisingAgency.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("廣告商");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,8 +67,7 @@ public class AdvertisingAgency extends JFrame {
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null); // 置中
 
-		ImageIcon logo = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png");
-		JLabel label = new JLabel(logo);
+		JLabel label = new JLabel(new ImageIcon(AdvertisingAgency.class.getResource("/Images/logo.png")));
 		label.setBounds(121, 13, 158, 157);
 		contentPane.add(label);
 
@@ -170,8 +168,7 @@ public class AdvertisingAgency extends JFrame {
 		license_lbl_1.setBounds(50, 790, 300, 35);
 		contentPane.add(license_lbl_1);
 
-		ImageIcon BkIcon = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\adBK.jpg"); // 背景圖片
-		JLabel Bk_lbl = new JLabel(BkIcon);
+		JLabel Bk_lbl = new JLabel(new ImageIcon(AdvertisingAgency.class.getResource("/Images/adBK.jpg")));
 		Bk_lbl.setBounds(400, 0, 1274, 865);
 		contentPane.add(Bk_lbl);
 
