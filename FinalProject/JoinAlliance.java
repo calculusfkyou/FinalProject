@@ -80,8 +80,7 @@ public class JoinAlliance extends JFrame {
 	 * Create the frame.
 	 */
 	public JoinAlliance() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(JoinAlliance.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("加入聯盟");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -319,8 +318,7 @@ public class JoinAlliance extends JFrame {
 		playerTextPane.setText("ID：" + latestAccount);
 		IDPanel.add(playerTextPane);
 
-		ImageIcon avatar = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\avatar.jpg");
-		JLabel avatar_lbl = new JLabel(avatar);
+		JLabel avatar_lbl = new JLabel(new ImageIcon(JoinAlliance.class.getResource("/Images/avatar.jpg")));
 		avatar_lbl.setBounds(3, 2, 65, 65);
 		IDPanel.add(avatar_lbl);
 
@@ -355,7 +353,7 @@ public class JoinAlliance extends JFrame {
 		AllPanel.add(joinButton);
 
 		ImageIcon BkIcon = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\buildAllianceBk.jpg"); // 背景圖片
+				JoinAlliance.class.getResource("/Images/buildAllianceBk.jpg")); // 背景圖片
 		Image originalImage = BkIcon.getImage();
 		float transparency = 0.5f; // 設定透明度，0.0 是完全透明，1.0 是完全不透明
 		Image transparentImage = makeTransparent(originalImage, transparency); // 創建具有指定透明度的新圖像
