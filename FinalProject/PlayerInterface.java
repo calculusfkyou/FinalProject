@@ -466,7 +466,7 @@ public class PlayerInterface extends JFrame {
 		announcements.add(new Announcement("羅傑這咖都鑽石了，這裡誰還卡在翡翠？？",PlayerInterface.class.getResource("/Images/news8.jpeg")
 				));
 		announcements.add(new Announcement("這咖的犽凝跟熊班長萎縮的腎一樣小 真的點點點",
-				PlayerInterface.class.getResource("/Images/news98.jpg")));
+				PlayerInterface.class.getResource("/Images/news9.jpg")));
 		announcements.add(new Announcement("世界八強AD 單腎貴族 被路人珍娜當狗在噴...",
 				PlayerInterface.class.getResource("/Images/news10.jpg")));
 		// 可以加入更多布告欄消息和相應的圖片
