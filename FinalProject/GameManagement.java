@@ -94,8 +94,7 @@ public class GameManagement extends JFrame {
 	 * Create the frame.
 	 */
 	public GameManagement() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(GameManagement.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("遊戲管理員");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -118,9 +117,7 @@ public class GameManagement extends JFrame {
 		chatPanel.setLayout(null);
 		contentPane.add(chatPanel);
 
-		ImageIcon conversation = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\conversation.png");
-		JLabel conversation_lbl = new JLabel(conversation);
+		JLabel conversation_lbl = new JLabel(new ImageIcon(GameManagement.class.getResource("/Images/conversation.png")));
 		conversation_lbl.setBounds(0, -2, 70, 70);
 		conversation_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -142,8 +139,7 @@ public class GameManagement extends JFrame {
 		conversation_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		chatPanel.add(conversation_lbl);
 
-		ImageIcon quest = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\quest.png");
-		JLabel quest_lbl = new JLabel(quest);
+		JLabel quest_lbl = new JLabel(new ImageIcon(GameManagement.class.getResource("/Images/quest.png")));
 		quest_lbl.setBounds(71, -2, 70, 70);
 		quest_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -165,8 +161,7 @@ public class GameManagement extends JFrame {
 		quest_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		chatPanel.add(quest_lbl);
 
-		ImageIcon bug = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\anti-bug.png");
-		JLabel bug_lbl = new JLabel(bug);
+		JLabel bug_lbl = new JLabel(new ImageIcon(GameManagement.class.getResource("/Images/anti-bug.png")));
 		bug_lbl.setBounds(142, -2, 70, 70);
 		bug_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -188,9 +183,7 @@ public class GameManagement extends JFrame {
 		bug_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		chatPanel.add(bug_lbl);
 
-		ImageIcon customer = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\customer-service.png");
-		JLabel customer_lbl = new JLabel(customer);
+		JLabel customer_lbl = new JLabel(new ImageIcon(GameManagement.class.getResource("/Images/customer-service.png")));
 		customer_lbl.setBounds(213, -2, 70, 70);
 		customer_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -257,8 +250,7 @@ public class GameManagement extends JFrame {
 		separator2.setBounds(68, 0, 1, 69);
 		IDPanel.add(separator2);
 
-		ImageIcon avatar = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\avatar.jpg");
-		JLabel avatar_lbl = new JLabel(avatar);
+		JLabel avatar_lbl = new JLabel(new ImageIcon(GameManagement.class.getResource("/Images/avatar.jpg")));
 		avatar_lbl.setBounds(3, 2, 65, 65);
 		IDPanel.add(avatar_lbl);
 
@@ -587,7 +579,7 @@ public class GameManagement extends JFrame {
 		contentPane.add(cancelAD_Btn);
 
 		ImageIcon BkIcon = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\buildAllianceBk.jpg"); // 背景圖片
+				GameManagement.class.getResource("/Images/buildAllianceBk.jpg")); // 背景圖片
 		Image originalImage = BkIcon.getImage();
 		float transparency = 0.5f; // 設定透明度，0.0 是完全透明，1.0 是完全不透明
 		Image transparentImage = makeTransparent(originalImage, transparency); // 創建具有指定透明度的新圖像
