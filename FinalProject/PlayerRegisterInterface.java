@@ -55,8 +55,7 @@ public class PlayerRegisterInterface extends JFrame {
 	 * Create the frame.
 	 */
 	public PlayerRegisterInterface() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(PlayerRegisterInterface.class.getResource("/Images/logo.png")));
 		setResizable(false); // 禁止調整視窗大小
 		setTitle("玩家註冊");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,8 +69,7 @@ public class PlayerRegisterInterface extends JFrame {
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null); // 置中
 
-		ImageIcon logo = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png");
-		JLabel label = new JLabel(logo);
+		JLabel label = new JLabel(new ImageIcon(PlayerRegisterInterface.class.getResource("/Images/logo.png")));
 		label.setBounds(121, 13, 158, 157);
 		contentPane.add(label);
 
@@ -188,8 +186,7 @@ public class PlayerRegisterInterface extends JFrame {
 		license_lbl_1.setBounds(50, 790, 300,35);
 		contentPane.add(license_lbl_1);
 		
-		ImageIcon BkIcon = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\RegBk.jpg");
-		JLabel Bk_lbl = new JLabel(BkIcon);
+		JLabel Bk_lbl = new JLabel(new ImageIcon(PlayerRegisterInterface.class.getResource("/Images/RegBk.jpg")));
 		Bk_lbl.setBounds(400, 0, 1240, 1080);
 		contentPane.add(Bk_lbl);
 		
