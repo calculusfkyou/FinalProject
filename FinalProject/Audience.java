@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -76,8 +77,7 @@ public class Audience extends JFrame {
 	 * Create the frame.
 	 */
 	public Audience() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Audience.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("觀眾");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -252,13 +252,13 @@ public class Audience extends JFrame {
 		// 初始化布告欄消息和相應的圖片
 		announcements = new ArrayList<>();
 		announcements.add(new Announcement("恭喜TPA獲得S99總冠軍！",
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\news1.jpg"));
+				Audience.class.getResource("/Images/news1.jpg")));
 		announcements.add(new Announcement("冠軍造型竟然不是阿璃！阿璃最黑暗的第十一年！",
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\news2.jpg"));
+				Audience.class.getResource("/Images/news2.jpg")));
 		announcements.add(new Announcement("世界賽打得不像人！被調侃精忠報國！？",
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\news3.jpg"));
+				Audience.class.getResource("/Images/news3.jpg")));
 		announcements.add(new Announcement("把我當戰犯？我直接續約！",
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\news6.jpg"));
+				Audience.class.getResource("/Images/news6.jpg")));
 		// 可以加入更多布告欄消息和相應的圖片
 
 		// 隨機排序，以便輪播效果
@@ -300,18 +300,18 @@ public class Audience extends JFrame {
 	// 內部類別，表示一條布告欄消息和相應的圖片
 	private static class Announcement {
 		private String message;
-		private String imagePath;
+		private URL imagePath;
 
-		public Announcement(String message, String imagePath) {
+		public Announcement(String message, URL url) {
 			this.message = message;
-			this.imagePath = imagePath;
+			this.imagePath = url;
 		}
 
 		public String getMessage() {
 			return message;
 		}
 
-		public String getImagePath() {
+		public URL getImagePath() {
 			return imagePath;
 		}
 	}
