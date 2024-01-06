@@ -51,8 +51,7 @@ public class PlayerLoginInterface extends JFrame {
 	}
 
 	public PlayerLoginInterface() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(PlayerLoginInterface.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("玩家登入");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,13 +64,11 @@ public class PlayerLoginInterface extends JFrame {
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null); // 置中
 		
-		ImageIcon logo = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png");
-		JLabel logo_lbl = new JLabel(logo);
+		JLabel logo_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/logo.png")));
 		logo_lbl.setBounds(121, 13, 158, 157);
 		contentPane.add(logo_lbl);
 
-		ImageIcon fbIcon = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\FB.png");
-		JLabel fb_lbl = new JLabel(fbIcon);
+		JLabel fb_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/FB.png")));
 		fb_lbl.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -81,8 +78,7 @@ public class PlayerLoginInterface extends JFrame {
 		fb_lbl.setBounds(60, 391, 66, 31);
 		contentPane.add(fb_lbl);
 
-		ImageIcon googleIcon = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\google.png");
-		JLabel google_lbl = new JLabel(googleIcon);
+		JLabel google_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/google.png")));
 		google_lbl.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -92,8 +88,7 @@ public class PlayerLoginInterface extends JFrame {
 		google_lbl.setBounds(130, 392, 66, 31);
 		contentPane.add(google_lbl);
 
-		ImageIcon appleIcon = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\apple.png");
-		JLabel apple_lbl = new JLabel(appleIcon);
+		JLabel apple_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/apple.png")));
 		apple_lbl.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -103,8 +98,7 @@ public class PlayerLoginInterface extends JFrame {
 		apple_lbl.setBounds(202, 391, 66, 31);
 		contentPane.add(apple_lbl);
 
-		ImageIcon XBOXIcon = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\XBOX.png");
-		JLabel XBOX_lbl = new JLabel(XBOXIcon);
+		JLabel XBOX_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/XBOX.png")));
 		XBOX_lbl.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -240,8 +234,7 @@ public class PlayerLoginInterface extends JFrame {
 		license_lbl_1.setBounds(50, 790, 300, 35);
 		contentPane.add(license_lbl_1);
 
-		ImageIcon BkIcon = new ImageIcon("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\LoginBK.jpg"); // 背景圖片
-		JLabel Bk_lbl = new JLabel(BkIcon);
+		JLabel Bk_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/LoginBK.jpg")));
 		Bk_lbl.setBounds(400, 0, 1720, 865);
 		contentPane.add(Bk_lbl);
 		
@@ -281,7 +274,7 @@ public class PlayerLoginInterface extends JFrame {
 		transitionFrame.setSize(transitionImage.getIconWidth(), transitionImage.getIconHeight());
 		transitionFrame.setLocationRelativeTo(null);
 		transitionFrame.setBackground(new Color(0, 0, 0, 0)); // 背景設定透明
-		transitionFrame.add(transitionLabel);
+		transitionFrame.getContentPane().add(transitionLabel);
 		
 
 		transitionFrame.setVisible(true);
