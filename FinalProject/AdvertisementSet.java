@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -87,8 +88,7 @@ public class AdvertisementSet extends JFrame {
 	 * Create the frame.
 	 */
 	public AdvertisementSet() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AdvertisementSet.class.getResource("/Images/logo.png")));
 		setResizable(false); // 不能調整視窗大小
 		setTitle("設置廣告");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -392,7 +392,7 @@ public class AdvertisementSet extends JFrame {
 		contentPane.add(cancelAD_Btn);
 
 		ImageIcon BkIcon = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\buildAllianceBk.jpg"); // 背景圖片
+				AdvertisementSet.class.getResource("/Images/buildAllianceBk.jpg")); // 背景圖片
 		Image originalImage = BkIcon.getImage();
 		float transparency = 0.5f; // 設定透明度，0.0 是完全透明，1.0 是完全不透明
 		Image transparentImage = makeTransparent(originalImage, transparency); // 創建具有指定透明度的新圖像
@@ -430,7 +430,7 @@ public class AdvertisementSet extends JFrame {
 
 		// 加載付款圖片
 		ImageIcon paymentImage = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\payment.jpg");
+				AdvertisementSet.class.getResource("/Images/payment.jpg"));
 
 		// 以JLabel的方式顯示圖片
 		JLabel label = new JLabel(paymentImage);
@@ -442,12 +442,12 @@ public class AdvertisementSet extends JFrame {
 
 		// 如果使用者選擇 "Download"
 		if (choice == 1) {
-			downloadImage("C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\payment.jpg");
+			downloadImage(AdvertisementSet.class.getResource("/Images/payment.jpg"));
 		}
 	}
 
 	// 下載圖片的方法
-	private static void downloadImage(String imagePath) {
+	private static void downloadImage(URL url) {
 		// 實作下載圖片的邏輯，這裡只是一個示例
 		// 可以使用 Java 的檔案複製或下載相關的函數，根據需求實作
 		// 這裡僅供參考
