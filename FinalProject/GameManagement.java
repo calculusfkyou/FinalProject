@@ -117,7 +117,8 @@ public class GameManagement extends JFrame {
 		chatPanel.setLayout(null);
 		contentPane.add(chatPanel);
 
-		JLabel conversation_lbl = new JLabel(new ImageIcon(GameManagement.class.getResource("/Images/conversation.png")));
+		JLabel conversation_lbl = new JLabel(
+				new ImageIcon(GameManagement.class.getResource("/Images/conversation.png")));
 		conversation_lbl.setBounds(0, -2, 70, 70);
 		conversation_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -183,7 +184,8 @@ public class GameManagement extends JFrame {
 		bug_lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // 設定游標為手形
 		chatPanel.add(bug_lbl);
 
-		JLabel customer_lbl = new JLabel(new ImageIcon(GameManagement.class.getResource("/Images/customer-service.png")));
+		JLabel customer_lbl = new JLabel(
+				new ImageIcon(GameManagement.class.getResource("/Images/customer-service.png")));
 		customer_lbl.setBounds(213, -2, 70, 70);
 		customer_lbl.addMouseListener(new MouseAdapter() {
 			@Override
@@ -343,16 +345,6 @@ public class GameManagement extends JFrame {
 				String scoreFormula = scoreFormulaTextField.getText();
 				String gameName = gameNameTextField.getText();
 
-				if (scoreFormula.isEmpty()) {
-					JOptionPane.showMessageDialog(contentPane, "請輸入評分方式", "錯誤", JOptionPane.ERROR_MESSAGE);
-					return;
-				}
-
-				if (gameName.isEmpty()) {
-					JOptionPane.showMessageDialog(contentPane, "請輸入遊戲名稱", "錯誤", JOptionPane.ERROR_MESSAGE);
-					return;
-				}
-
 				// 檢查方案是否選擇
 				if (sponsorshipComboBox.getSelectedItem().equals("請選擇...")) {
 					JOptionPane.showMessageDialog(contentPane, "請選擇方案", "錯誤", JOptionPane.ERROR_MESSAGE);
@@ -376,6 +368,15 @@ public class GameManagement extends JFrame {
 					JOptionPane.showMessageDialog(contentPane, "結束日期必須在起始日期之後", "錯誤", JOptionPane.ERROR_MESSAGE);
 					return;
 				} else {
+					if (scoreFormula.isEmpty()) {
+						JOptionPane.showMessageDialog(contentPane, "請輸入評分方式", "錯誤", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+
+					if (gameName.isEmpty()) {
+						JOptionPane.showMessageDialog(contentPane, "請輸入遊戲名稱", "錯誤", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					JOptionPane.showMessageDialog(contentPane, "選擇成功，請確認遊戲設定！", "提示", JOptionPane.INFORMATION_MESSAGE);
 					check = true;
 				}
@@ -578,8 +579,7 @@ public class GameManagement extends JFrame {
 		cancelAD_Btn.setBounds(700, 40, 100, 40);
 		contentPane.add(cancelAD_Btn);
 
-		ImageIcon BkIcon = new ImageIcon(
-				GameManagement.class.getResource("/Images/buildAllianceBk.jpg")); // 背景圖片
+		ImageIcon BkIcon = new ImageIcon(GameManagement.class.getResource("/Images/buildAllianceBk.jpg")); // 背景圖片
 		Image originalImage = BkIcon.getImage();
 		float transparency = 0.5f; // 設定透明度，0.0 是完全透明，1.0 是完全不透明
 		Image transparentImage = makeTransparent(originalImage, transparency); // 創建具有指定透明度的新圖像
