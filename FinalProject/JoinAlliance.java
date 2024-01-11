@@ -30,6 +30,8 @@ import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import org.junit.jupiter.api.Test;
+
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -411,7 +413,9 @@ public class JoinAlliance extends JFrame {
 	}
 
 	// for一般玩家
+	@Test
 	private void saveUserAlliance(String account, String alliance) { // 儲存用戶聯盟資料
+//		System.out.println("join an alliance！");
 		User.addAlliance(account, alliance);
 	}
 
