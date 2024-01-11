@@ -48,6 +48,8 @@ import javax.swing.Timer;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 
+import org.junit.jupiter.api.Test;
+
 // 自定義 ListCellRenderer 類別
 class MyListCellRenderer extends DefaultListCellRenderer {
 	private static final long serialVersionUID = 1L;
@@ -596,7 +598,7 @@ public class PlayerInterface extends JFrame {
 		game.setVisible(true);
 		setVisible(false);
 	}
-
+	
 	@Test
 	private void showBuildAlliance() {
 		// System.out.println("show buildAlliance interface");
@@ -605,7 +607,9 @@ public class PlayerInterface extends JFrame {
 		setVisible(false);
 	}
 
+	@Test
 	private void showJoinAlliance() {
+		// System.out.println("show joinAlliance interface");
 		JoinAlliance join = new JoinAlliance();
 		join.setVisible(true);
 		setVisible(false);
