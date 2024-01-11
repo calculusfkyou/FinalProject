@@ -325,7 +325,7 @@ public class PlayerInterface extends JFrame {
 						String latestAllaince = User.getLatestAlliance(); // 取得最新的聯盟
 						allianceTextPane.setText("聯盟：" + latestAllaince);
 						IDPanel.add(allianceTextPane);
-						System.out.println("check now alliance");
+//						System.out.println("check now alliance");
 						if (checkIn(User.getLatestAccount())) {
 							// 若已有聯盟，顯示聯盟成員列表
 							allianceList.setVisible(true);
