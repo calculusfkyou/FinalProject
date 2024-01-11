@@ -2,6 +2,8 @@ package FinalProject;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.Test;
+
 public class AllianceOwner extends User {
 	private static int memberAmount = 0;
 	private static String allianceDescription = ""; // 聯盟簡介
@@ -20,7 +22,9 @@ public class AllianceOwner extends User {
 		return memberNames.toArray(new String[memberNames.size()]);
 	}
 
+	@Test
 	public static void kickMember(String member) {
+//		System.out.println("kick member！");
 		for (String i : memberNames) {
 			if (i.equals(member)) {
 				memberNames.remove(i);
