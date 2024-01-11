@@ -27,6 +27,9 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
+
+import org.junit.jupiter.api.Test;
+
 import java.awt.SystemColor;
 import java.awt.Toolkit;
 
@@ -150,7 +153,7 @@ public class PlayerLoginInterface extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String account = AccounttextField.getText();
 				String password = String.valueOf(passwordField.getPassword());
-
+				
 				if (!isUserRegistered(account)) {
 					// 帳號不存在
 					JOptionPane.showMessageDialog(null, "此用戶不存在！", "錯誤", JOptionPane.ERROR_MESSAGE);
@@ -262,6 +265,7 @@ public class PlayerLoginInterface extends JFrame {
 		});
 	}
 	
+	@Test
 	private void showTransitionScreen() {
 		ImageIcon transitionImage = new ImageIcon(
 				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\cutscene.png");
@@ -301,6 +305,7 @@ public class PlayerLoginInterface extends JFrame {
 		}
 	}
 
+	@Test
 	private void showPlayerInterface() {
 		PlayerInterface player = new PlayerInterface();
 		player.setVisible(true);
