@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import org.junit.jupiter.api.Test;
+
 public class User {
 	private String account;
 	private String passWord;
@@ -76,13 +78,15 @@ public class User {
 	public static String getLatestGame() {
 		return latestGame;
 	}
-
+	
+	@Test
 	public static void nowGame(String account) { // 確認現在遊戲
 		boolean check = false;
 		for (String[] i : userGame) {
 			if (i[0].equals(account)) { // 找到符合帳號
 				latestGame = i[1];
 				check = true;
+//				System.out.println("enter a game！");
 				break;
 			}
 		}
