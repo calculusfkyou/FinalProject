@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.junit.jupiter.api.Test;
+
 import java.awt.Component;
 import java.awt.Cursor;
 
@@ -228,11 +231,13 @@ public class PlayerRegisterInterface extends JFrame {
 		player.setVisible(true); // 在按鈕點擊時，顯示已存在的玩家登入視窗
 		setVisible(false); // 隱藏主視窗（可選）
 	}
-
+	
+	@Test
 	// 儲存已註冊的用戶列表到陣列(假裝)
 	private void saveRegisteredUsers(String account, String passWord) {
 		User tempUser = new User();
 		tempUser.addInfo(account, passWord);
+		System.out.println("player register！");
 	}
 
 	// 檢查用戶名是否已存在
