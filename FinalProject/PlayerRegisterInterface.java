@@ -237,7 +237,7 @@ public class PlayerRegisterInterface extends JFrame {
 	private void saveRegisteredUsers(String account, String passWord) {
 		User tempUser = new User();
 		tempUser.addInfo(account, passWord);
-		System.out.println("player register！");
+		// System.out.println("player register！");
 	}
 
 	// 檢查用戶名是否已存在
