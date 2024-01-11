@@ -294,6 +294,8 @@ public class PlayerLoginInterface extends JFrame {
 		// 啟動計時器
 		timer.setRepeats(false); // 設定為單次執行
 		timer.start();
+
+		// System.out.println("player login！");
 	}
 	
 	// 開啟外部網站
@@ -305,7 +307,6 @@ public class PlayerLoginInterface extends JFrame {
 		}
 	}
 
-	@Test
 	private void showPlayerInterface() {
 		PlayerInterface player = new PlayerInterface();
 		player.setVisible(true);
