@@ -321,12 +321,11 @@ public class PlayerInterface extends JFrame {
 					if (result == JOptionPane.YES_OPTION) {
 						// 退出聯盟
 						checkExit(User.getLatestAccount());
-						// refresh介面
-//						showPlayerInterface();
 						User.nowAlliance(latestAccount); // 更新目前聯盟
 						String latestAllaince = User.getLatestAlliance(); // 取得最新的聯盟
 						allianceTextPane.setText("聯盟：" + latestAllaince);
 						IDPanel.add(allianceTextPane);
+						System.out.println("check now alliance");
 						if (checkIn(User.getLatestAccount())) {
 							// 若已有聯盟，顯示聯盟成員列表
 							allianceList.setVisible(true);
