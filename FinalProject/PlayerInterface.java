@@ -597,7 +597,9 @@ public class PlayerInterface extends JFrame {
 		setVisible(false);
 	}
 
+	@Test
 	private void showBuildAlliance() {
+		// System.out.println("show buildAlliance interface");
 		BuildAlliance build = new BuildAlliance();
 		build.setVisible(true);
 		setVisible(false);
