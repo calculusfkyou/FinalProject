@@ -552,6 +552,7 @@ public class GameManagement extends JFrame {
 		announceGame_Btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (check) {
+					// System.out.println("announce a game！");
 					JOptionPane.showMessageDialog(contentPane, "恭喜！遊戲已成功發佈", "提示", JOptionPane.INFORMATION_MESSAGE);
 				} else {
 					JOptionPane.showMessageDialog(contentPane, "請先完成先前步驟！", "警告", JOptionPane.ERROR_MESSAGE);
