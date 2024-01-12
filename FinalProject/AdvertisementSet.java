@@ -37,6 +37,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import org.junit.jupiter.api.Test;
+
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
@@ -225,6 +227,7 @@ public class AdvertisementSet extends JFrame {
 					JOptionPane.showMessageDialog(contentPane, "選擇成功，請於規定時間內付款！", "提示",
 							JOptionPane.INFORMATION_MESSAGE);
 					check = true;
+//					System.out.println("set AD successed！");
 				}
 				// 在確認按鈕的事件處理中賦值
 				selectedSponsorship = (String) sponsorshipComboBox.getSelectedItem();
@@ -425,9 +428,11 @@ public class AdvertisementSet extends JFrame {
 		});
 
 	}
-
+	
+	@Test
 	private static void showPaymentImage() {
-
+//		System.out.println("show payment image");
+		
 		// 加載付款圖片
 		ImageIcon paymentImage = new ImageIcon(
 				AdvertisementSet.class.getResource("/Images/payment.jpg"));
