@@ -431,7 +431,7 @@ public class AdvertisementSet extends JFrame {
 	
 	@Test
 	private static void showPaymentImage() {
-//		System.out.println("show payment image");
+//		System.out.println("show payment image！");
 		
 		// 加載付款圖片
 		ImageIcon paymentImage = new ImageIcon(
