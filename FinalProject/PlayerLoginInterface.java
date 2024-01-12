@@ -66,7 +66,7 @@ public class PlayerLoginInterface extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null); // 置中
-		
+
 		JLabel logo_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/logo.png")));
 		logo_lbl.setBounds(121, 13, 158, 157);
 		contentPane.add(logo_lbl);
@@ -153,7 +153,7 @@ public class PlayerLoginInterface extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String account = AccounttextField.getText();
 				String password = String.valueOf(passwordField.getPassword());
-				
+
 				if (!isUserRegistered(account)) {
 					// 帳號不存在
 					JOptionPane.showMessageDialog(null, "此用戶不存在！", "錯誤", JOptionPane.ERROR_MESSAGE);
@@ -240,21 +240,21 @@ public class PlayerLoginInterface extends JFrame {
 		JLabel Bk_lbl = new JLabel(new ImageIcon(PlayerLoginInterface.class.getResource("/Images/LoginBK.jpg")));
 		Bk_lbl.setBounds(400, 0, 1720, 865);
 		contentPane.add(Bk_lbl);
-		
+
 		// 設定 Enter 鍵的映射
-        InputMap inputMap1 = contentPane.getInputMap(JPanel.WHEN_IN_FOCUSED_WINDOW);
-        inputMap1.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "enterPressed");
-        contentPane.getActionMap().put("enterPressed", new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Component focusedComponent = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-                if (focusedComponent instanceof JButton) {
-                    JButton focusedButton = (JButton) focusedComponent;
-                    focusedButton.doClick();
-                }
-            }
-        });
-        
+		InputMap inputMap1 = contentPane.getInputMap(JPanel.WHEN_IN_FOCUSED_WINDOW);
+		inputMap1.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "enterPressed");
+		contentPane.getActionMap().put("enterPressed", new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Component focusedComponent = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+				if (focusedComponent instanceof JButton) {
+					JButton focusedButton = (JButton) focusedComponent;
+					focusedButton.doClick();
+				}
+			}
+		});
+
 		InputMap inputMap = contentPane.getInputMap(JPanel.WHEN_IN_FOCUSED_WINDOW);
 		ActionMap actionMap = contentPane.getActionMap();
 		inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "exitFullScreen");
@@ -264,9 +264,11 @@ public class PlayerLoginInterface extends JFrame {
 			}
 		});
 	}
-	
+
 	@Test
 	private void showTransitionScreen() {
+		// System.out.println("player login！");
+
 		ImageIcon transitionImage = new ImageIcon(
 				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\cutscene.png");
 		JLabel transitionLabel = new JLabel(transitionImage);
@@ -279,7 +281,6 @@ public class PlayerLoginInterface extends JFrame {
 		transitionFrame.setLocationRelativeTo(null);
 		transitionFrame.setBackground(new Color(0, 0, 0, 0)); // 背景設定透明
 		transitionFrame.getContentPane().add(transitionLabel);
-		
 
 		transitionFrame.setVisible(true);
 
@@ -294,10 +295,8 @@ public class PlayerLoginInterface extends JFrame {
 		// 啟動計時器
 		timer.setRepeats(false); // 設定為單次執行
 		timer.start();
-
-		// System.out.println("player login！");
 	}
-	
+
 	// 開啟外部網站
 	private void openWebPage(String url) {
 		try {
@@ -312,13 +311,13 @@ public class PlayerLoginInterface extends JFrame {
 		player.setVisible(true);
 		setVisible(false);
 	}
-	
+
 	private void showMain() {
 		Main main = new Main();
 		main.setVisible(true);
 		setVisible(false);
 	}
-	
+
 	private boolean isUserRegistered(String account) {
 		// Check if the account exists in userInformation array
 		User tempUser = new User();
