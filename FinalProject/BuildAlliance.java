@@ -34,6 +34,9 @@ import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import org.junit.jupiter.api.Test;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
@@ -250,8 +253,8 @@ public class BuildAlliance extends JFrame {
 				}
 
 				// 檢查是否有選擇聯盟圖片
-				if (previewLabel.getIcon() == null) {
-					JOptionPane.showMessageDialog(contentPane, "請上傳聯盟圖片！", "錯誤", JOptionPane.ERROR_MESSAGE);
+				if (radioButtonGroup.getSelection() == null) {
+					JOptionPane.showMessageDialog(contentPane, "請選擇聯盟類型！", "錯誤", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
@@ -373,9 +376,11 @@ public class BuildAlliance extends JFrame {
 	private void initializeAnnouncements() {
 		// 初始化布告欄消息和相應的圖片
 		announcements = new ArrayList<>();
-		announcements.add(new Announcement("2024世界賽即將開打！歡迎各位購票入場",BuildAlliance.class.getResource("/Images/news4.jpg")));
-		announcements.add(new Announcement("的賽斷開連接！微博和奧迪沒有贊助",BuildAlliance.class.getResource("/Images/news5.jpg")));
-		announcements.add(new Announcement("嘎痛：覺得牌位積分不重要 不講是誰 \"西X\"..不練角 永遠站在老山那邊 每次出去都被雷茲虐",BuildAlliance.class.getResource("/Images/news7.jpg")));
+		announcements
+				.add(new Announcement("2024世界賽即將開打！歡迎各位購票入場", BuildAlliance.class.getResource("/Images/news4.jpg")));
+		announcements.add(new Announcement("的賽斷開連接！微博和奧迪沒有贊助", BuildAlliance.class.getResource("/Images/news5.jpg")));
+		announcements.add(new Announcement("嘎痛：覺得牌位積分不重要 不講是誰 \"西X\"..不練角 永遠站在老山那邊 每次出去都被雷茲虐",
+				BuildAlliance.class.getResource("/Images/news7.jpg")));
 		// 可以加入更多布告欄消息和相應的圖片
 
 		// 隨機排序，以便輪播效果
@@ -446,8 +451,10 @@ public class BuildAlliance extends JFrame {
 		return bufferedImage;
 	}
 
+	@Test
 	// for聯盟所有者
 	private void saveUserAlliance(String account, String alliance, String amount) { // 儲存用戶聯盟資料
+		System.out.println("build an alliance！");
 		User.addAlliance(account, alliance, amount);
 	}
 
