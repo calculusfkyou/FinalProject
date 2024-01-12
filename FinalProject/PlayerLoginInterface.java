@@ -270,7 +270,7 @@ public class PlayerLoginInterface extends JFrame {
 		// System.out.println("player login！");
 
 		ImageIcon transitionImage = new ImageIcon(
-				"C:\\Users\\GIGABYTE\\eclipse-workspace\\Demo\\src\\Images\\cutscene.png");
+				PlayerLoginInterface.class.getResource("/Images/cutscene.png"));
 		JLabel transitionLabel = new JLabel(transitionImage);
 		transitionLabel.setOpaque(false);
 
